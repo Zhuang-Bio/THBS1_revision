@@ -67,6 +67,7 @@ samtools index ${SampleName}_sorted.bam
 rm ${SampleName}.sam
 rm ${SampleName}.bam
 
+# RseQC running
 module load bioinfo-tools rseqc/2.6.4
 infer_experiment.py \
 -i /proj/snic2021-23-156/pro_radiated_KC_lncRNAseq/s1rawData/Clean/${SampleName}/${SampleName}_sorted.bam \
