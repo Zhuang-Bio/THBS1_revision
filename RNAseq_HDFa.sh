@@ -26,7 +26,7 @@ fastqc ${SampleName}_1P.fq.gz
 fastqc ${SampleName}_2P.fq.gz
 
 # hisat2 mapping the read to reference genome
-##-- pay attention to the parameter of rna-strandness according to different library types
+##-- pay attention to the parameter of rna-strandness according to different library types [https://chipster.csc.fi/manual/library-type-summary.html](https://chipster.csc.fi/manual/library-type-summary.html)
 ##-- which can be inferred by the RseQC https://chipster.csc.fi/manual/rseqc_infer_rnaseq_experiment.html
 hisat2 -p 8 \
 --rg-id=${SampleName} --rg SM:${SampleName} \
