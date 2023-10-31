@@ -67,7 +67,10 @@ samtools index ${SampleName}_sorted.bam
 rm ${SampleName}.sam
 rm ${SampleName}.bam
 
-
-
+module load bioinfo-tools rseqc/2.6.4
+infer_experiment.py \
+-i /proj/snic2021-23-156/pro_radiated_KC_lncRNAseq/s1rawData/Clean/${SampleName}/${SampleName}_sorted.bam \
+-r /crex/proj/snic2021-23-156/human_genome/hg38_Gencode_V28_RSeQC.bed \
+> ./infer_experiment/${SampleName}.infer_experiment.txt
 
 
