@@ -74,4 +74,17 @@ infer_experiment.py \
 -r /crex/proj/snic2021-23-156/bulkRNAseq/human_genome/hg38_Gencode_V28_RSeQC.bed \
 > ./infer_experiment/${SampleName}.infer_experiment.txt
 
+# RUN FeatureCount
+module load bioinfo-tools samtools/1.10 subread/2.0.0
+featureCounts \
+-T 10 \
+-p \
+-t exon \
+-g gene_id \
+-s 2 \
+-a /proj/snic2019-8-262/humanGenome/gencode.v34.chr_patch_hapl_scaff.annotation.gtf -o ./allsample_genecounts.txt \
+/crex/proj/snic2021-23-156/THBS1_NC_revision/RNAseq_HDFa/00-rawData/soapnuke/clean/HDFa_Ctr_1/HDFa_Ctr_1_sorted.bam \
+/crex/proj/snic2021-23-156/THBS1_NC_revision/RNAseq_HDFa/00-rawData/soapnuke/clean/HDFa_Ctr_2/HDFa_Ctr_2_sorted.bam \
+/crex/proj/snic2021-23-156/THBS1_NC_revision/RNAseq_HDFa/00-rawData/soapnuke/clean/HDFa_OE_1/HDFa_OE_1_sorted.bam \
+/crex/proj/snic2021-23-156/THBS1_NC_revision/RNAseq_HDFa/00-rawData/soapnuke/clean/HDFa_OE_2/HDFa_OE_2_sorted.bam
 
